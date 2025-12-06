@@ -1,0 +1,774 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  color: #0b1220;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Loader (light) ---------- */
+
+#site-loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #fbfdff, #f4f9ff);
+  z-index: 9999;
+  transition: opacity .45s;
+}
+
+.spinner {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: conic-gradient(#7c3aed, #4361ee, #3b82f6, #7c3aed);
+  animation: spin 1s linear infinite;
+  filter: blur(6px);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- NAV ---------- */
+
+/* NAV WRAPPER */
+nav {
+  width: 100%;
+  background: #0c0c0c;
+  padding: 18px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* DESKTOP MENU */
+.nav-list {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-list a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-list a:hover {
+  opacity: 0.7;
+}
+
+/* BURGER BUTTON */
+#burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+#burger span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
+}
+
+/* MOBILE MENU HIDDEN */
+@media (max-width: 768px) {
+  .nav-list {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    height: 100vh;
+    width: 260px;
+    background: #111;
+    flex-direction: column;
+    padding-top: 120px;
+    gap: 25px;
+    padding-left: 24px;
+    transition: 0.4s ease;
+    border-left: 2px solid #222;
+    box-sizing: border-box;
+  }
+
+  #burger {
+    display: flex;
+  }
+}
+
+/* WHEN OPEN */
+.nav-list.open {
+  right: 0;
+}
+
+/* BURGER ANIMATION */
+#burger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+#burger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+.hero {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(180deg, #ffffff, #f6f9ff);
+  position: relative;
+  padding: 60px 20px;
+  overflow: hidden;
+}
+
+.hero .inner {
+  max-width: 980px;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  letter-spacing: .4px;
+  margin-bottom: 10px;
+  color: #071133;
+}
+
+.hero p {
+  opacity: .9;
+  margin-bottom: 18px;
+  color: #334155;
+}
+
+.hero .cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 700;
+  border: 1px solid rgba(11, 17, 34, .06);
+  background: #ffffff;
+  color: #071133;
+  transition: all .22s;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, .04);
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, #7c3aed, #4361ee);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(67, 97, 238, .12);
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+/* subtle background shapes */
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: .12;
+  filter: blur(40px);
+}
+
+.hero::before {
+  width: 420px;
+  height: 420px;
+  left: -60px;
+  top: -40px;
+  background: radial-gradient(circle, #f0e9ff, #e7f0ff);
+}
+
+.hero::after {
+  width: 300px;
+  height: 300px;
+  right: -80px;
+  bottom: -40px;
+  background: radial-gradient(circle, #eaf4ff, #f4ebff);
+}
+
+/* ---------- Sections ---------- */
+
+section {
+  padding: 72px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 28px;
+  color: #4b2fb3;
+}
+
+/* ---------- Team ---------- */
+
+
+
+
+
+/* ---------- Skills ---------- */
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+.skill {
+  padding: 14px;
+  border-radius: 10px;
+  background: #fbfdff;
+  text-align: center;
+  font-weight: 700;
+  border: 1px solid rgba(11, 17, 34, .04);
+  color: #0b1220;
+  box-shadow: 0 6px 18px rgba(11, 17, 34, .03);
+}
+
+/* ---------- Workflow ---------- */
+
+.workflow {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+.workflow-step {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 10px;
+  border-left: 4px solid rgba(124, 58, 237, .8);
+  box-shadow: 0 6px 20px rgba(11, 17, 34, .04);
+}
+
+.workflow-step h4 {
+  margin-bottom: 6px;
+  color: #071133;
+}
+
+.workflow-step p {
+  color: #334155;
+}
+
+/* ---------- Projects ---------- */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+.project-card {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(11, 17, 34, .06);
+  background: #ffffff;
+  transition: transform .28s, box-shadow .28s;
+  box-shadow: 0 8px 26px rgba(11, 17, 34, .04);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 80px rgba(11, 17, 34, .08);
+}
+
+.project-media {
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+}
+
+.project-media img {
+  width: 92%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(11, 17, 34, .04);
+}
+
+.project-info {
+  padding: 16px;
+}
+
+.project-info h3 {
+  margin-bottom: 8px;
+  color: #2f2b6f;
+}
+
+.project-info p {
+  color: #475569;
+}
+
+.project-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ghost {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(11, 17, 34, .06);
+  background: transparent;
+  color: #071133;
+  font-weight: 700;
+}
+
+.primary {
+  background: linear-gradient(90deg, #7c3aed, #4361ee);
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 800;
+  box-shadow: 0 8px 30px rgba(67, 97, 238, .08);
+}
+
+/* ---------- Lightbox ---------- */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, .75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 24px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 92%;
+  max-height: 86%;
+  border-radius: 8px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .5);
+}
+
+/* ---------- Contact ---------- */
+
+.contact-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(11, 17, 34, .06);
+  box-shadow: 0 12px 36px rgba(11, 17, 34, .04);
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.contact-row input,
+.contact-row textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(11, 17, 34, .06);
+  background: #fbfdff;
+  color: #071133;
+}
+
+.contact-row textarea {
+  grid-column: 1 / 3;
+  min-height: 120px;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  padding: 28px;
+  text-align: center;
+  color: #6b7280;
+  opacity: .95;
+  margin-top: 36px;
+}
+
+/* ---------- Reveal animations ---------- */
+
+.revealer {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: all .6s cubic-bezier(.22, .9, .2, 1);
+}
+
+.revealer.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width: 900px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .contact-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+@media(max-width: 520px) {
+  .team-card {
+    width: 100%;
+  }
+
+  .contact-wrap {
+    padding: 16px; 
+  }
+
+  .contact-row {
+    display: flex;
+    flex-direction: column; 
+    gap: 12px; 
+  }
+
+  .contact-row input,
+  .contact-row textarea {
+    width: 100%; 
+    font-size: 16px;
+  }
+
+  .contact-actions {
+    flex-direction: column; 
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .contact-actions button {
+    width: 100%;
+  }
+}
+
+
+/* ----- BURGER ANIMATION ----- */
+.burger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ----- MOBILE MENU OPEN ----- */
+.nav-list.open {
+  right: 0;
+}
+
+
+/* WHY CHOOSE US SECTION */
+.why-us {
+  padding: 80px 0;
+  width:100%;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.why-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.why-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: 0.25s;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 22px rgba(0,0,0,0.12);
+}
+
+/* REVEAL ANIMATION (you already had this, but improved) */
+.revealer {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s ease;
+}
+
+.revealer.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.35s ease;
+  z-index: 999;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img {
+  width: 80%;
+  max-width: 900px;
+  border-radius: 14px;
+}
+
+
+/* style.css-ში დაამატეთ */
+
+.small-btn {
+  padding: 6px 10px; 
+  font-size: 14px;
+  border-radius: 8px;
+  margin-left: 10px; /* მეილისგან დაშორება */
+}
+
+/* Auth info-ს გასწორება */
+#auth-info-logged-in {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* პატარა დაშორება მეილსა და ღილაკს შორის */
+}
+
+/* მობილურზე რომ არ დაირღვეს დიზაინი */
+@media (max-width: 768px) {
+    #auth-info-logged-in {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .small-btn {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
+
+/* --- Dropdown სტილები (style.css-ში) --- */
+
+/* მთავარი კონტეინერი (Dropdown-ის ძირი) */
+#auth-info-logged-in {
+    position: relative; /* აუცილებელია Dropdown-ის შიგთავსის პოზიციონირებისთვის */
+    display: flex;
+    align-items: center;
+}
+
+/* ღილაკი, რომელზეც Email წერია */
+.user-email-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 600; 
+    color: #7c3aed; /* იასამნისფერი ფერი */
+    transition: background 0.3s;
+}
+
+.user-email-btn:hover {
+    background-color: rgba(124, 58, 237, 0.1); 
+}
+
+/* Dropdown-ის შიგთავსი - თავიდან დამალულია */
+.dropdown-content {
+    display: none; /* ეს მთავარია! JS აჩენს/მალავს */
+    position: absolute;
+    background-color: #ffffff; 
+    min-width: 160px;
+    box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.1);
+    z-index: 10; 
+    top: 100%; /* აჩენს Email ღილაკის ქვემოთ */
+    right: 0; /* მარჯვნივ გასწორება */
+    padding: 8px;
+    border-radius: 4px;
+}
+
+/* Logout ღილაკის წითელი სტილი */
+.logout-red-btn {
+    width: 100%;
+    background-color: #ef4444; /* წითელი ფონი */
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+    text-align: center;
+    padding: 8px 10px;
+}
+
+.logout-red-btn:hover {
+    background-color: #dc2626; /* მუქი წითელი hover-ზე */
+}
+
+
+
+
+/* --- მოდალის ძირითადი სტილები --- */
+
+.modal {
+    display: none; /* თავიდან დამალულია JS-ით ვაჩენთ */
+    position: fixed; 
+    z-index: 9999; /* დარწმუნდით, რომ ყველა კონტენტს ფარავს */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7); /* მუქი ფონი */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* ცენტრში განთავსება */
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%; 
+    max-width: 400px; /* ფიქსირებული სიგანე */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* --- ფორმის და ტაბების სტილები --- */
+
+.auth-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.active-tab {
+    color: #7c3aed; /* იასამნისფერი აქტიური ტაბი */
+    border-bottom: 2px solid #7c3aed;
+    font-weight: 600;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.full-width-btn {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.auth-error-message {
+    color: #ef4444; /* წითელი შეცდომის ტექსტი */
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+}

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>PixelWave Studio – Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ---------- Reset & Base ---------- */
+
+</style>
+</head>
+<body>
+
+  <div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        
+        <div class="auth-tabs">
+            <button id="show-login-tab" class="tab-btn active-tab">Sign In</button>
+            <button id="show-register-tab" class="tab-btn">Register</button>
+        </div>
+
+        <div id="login-form-container" class="form-container">
+            <h3>Sign In to Chat</h3>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required name="email">
+                <input type="password" placeholder="Password" required name="password">
+                <button type="submit" id="loginButton" class="btn primary-btn full-width-btn">Sign In</button>
+                <p class="auth-error-message" id="login-error"></p>
+            </form>
+        </div>
+
+        <div id="register-form-container" class="form-container" style="display: none;">
+            <h3>Create an Account</h3>
+            <form id="registrationForm">
+                <input type="email" placeholder="Email" required name="email">
+                <input type="password" placeholder="Password (min 6 chars)" required name="password">
+                <button type="submit" id="registerButton" class="btn primary-btn full-width-btn">Register</button>
+                <p class="auth-error-message" id="register-error"></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Loader -->
+<div id="site-loader"><div class="spinner" aria-hidden="true"></div></div>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <div class="nav-container">
+    <a class="logo" href="#hero">PixelWave</a>
+    <button id="burger" class="burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div id="nav-menu" class="nav-list">
+  <a href="#skills">Skills</a>
+  <a href="#workflow">How we work</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+  
+  <a href="#registration" id="auth-link-logged-out" class="auth-control">Register / Login</a>
+  
+  <div id="auth-info-logged-in" class="auth-control" style="display: none;">
+    
+    <button id="user-email-display" class="user-email-btn" aria-label="Toggle user menu"></button>
+    
+    <div id="logout-dropdown-content" class="dropdown-content">
+      <button id="logout-button" class="btn small-btn logout-red-btn" aria-label="Sign out">Logout</button>
+    </div>
+  </div>
+</div>
+</nav>
+
+
+
+<!-- HERO -->
+<header class="hero">
+  <div class="inner container" role="banner">
+    <h1>PixelWave Studio</h1>
+    <p><strong>We build custom, fast and maintainable websites using HTML • CSS • JavaScript.</strong><br class="hide-sm"> Focused on performance, accessibility and real business results.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">See Projects</a>
+      <a class="btn" href="#contact">Request Quote</a>
+    </div>
+  </div>
+</header>
+
+<!-- TEAM -->
+<section class="why-us reveal">
+
+  <h2 class="section-title">Why Choose Us</h2>
+  
+
+  <div class="why-grid">
+    <div class="why-card revealer">
+      <h3>⚡ Fast Delivery</h3>
+      <p>We deliver modern websites in record time without losing quality.</p>
+    </div>
+
+    <div class="why-card revealer">
+      <h3>🧼 Clean Code</h3>
+      <p>HTML, CSS, JS built professionally — easy to upgrade and fast to load.</p>
+    </div>
+
+    <div class="why-card revealer">
+      <h3>🎨 Modern Design</h3>
+      <p>Minimal, aesthetic and business-focused designs that convert.</p>
+    </div>
+
+    <div class="why-card revealer">
+      <h3>💬 24/7 Support</h3>
+      <p>We respond instantly and provide lifetime support for every project.</p>
+    </div>
+
+    <div class="why-card revealer">
+<h3>📱 App Development</h3>
+<p>High‑performance mobile & desktop apps built using modern frameworks. Smooth UI and reliable performance.</p>
+</div>
+
+
+<!-- New App Development Card -->
+  </div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Skills & Technologies</h2>
+    <div class="skills-list revealer">
+      <div class="skill">HTML5 & Semantic Markup</div>
+      <div class="skill">Modern CSS (Flex/Grid)</div>
+      <div class="skill">Vanilla JS & ES6+</div>
+      <div class="skill">React & Component Systems</div>
+      <div class="skill">Performance Optimization</div>
+      <div class="skill">Accessibility (a11y)</div>
+      <div class="skill">API Integration & Back-end</div>
+      <div class="skill">Swift</div>
+  <div class="skill">Kotlin</div>
+  <div class="skill">Java</div>
+  <div class="skill">Dart (Flutter)</div>
+
+  <div class="skill">Xcode</div>
+  <div class="skill">Android Studio</div>
+  <div class="skill">Figma</div>
+  <div class="skill">Adobe XD</div>
+  <div class="skill">REST APIs</div>
+  <div class="skill">Firebase</div>
+  <div class="skill">SQLite</div>
+  <div class="skill">Git / GitHub</div>
+  <div class="skill">Unit Testing</div>
+  <div class="skill">Debugging</div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section id="workflow">
+  <div class="container">
+    <h2 class="section-title">How We Work</h2>
+    <div class="workflow revealer">
+      <div class="workflow-step"><h4>1. Quick Discovery</h4><p>We collect goals and success metrics. 20-minute intake to assess scope and timeline.</p></div>
+      <div class="workflow-step"><h4>2. Proposal & Milestones</h4><p>We deliver a clear scope with milestones and a fixed price. No surprises.</p></div>
+      <div class="workflow-step"><h4>3. Build & Review</h4><p>Iterative delivery — review checkpoints, QA and accessibility checks.</p></div>
+      <div class="workflow-step"><h4>4. Launch & Monitor</h4><p>Deployment, performance checks, and optional monitoring/maintenance.</p></div>
+      <div class="workflow-step"><h4>5. Support</h4><p>Monthly maintenance and small updates — optional retainer plans available.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Selected Projects & Template Demos</h2>
+    <p style="text-align:center;max-width:880px;margin:0 auto 18px;color:#475569">Each project below is a template/demo we can adapt rapidly for your brand — full code delivery and hosting support included.</p>
+
+    <div class="projects-grid">
+      <!-- Template 1 -->
+      <article class="project-card revealer">
+        <div class="project-media"><img src="./images/game1.png" alt="Landing Template"></div>
+        <div class="project-info">
+          <h3>Games Review Platform</h3>
+          <p>Explore detailed reviews, ratings and gameplay information.</p>
+          <div class="project-actions">
+            <button class="ghost" data-preview-open>Preview</button>
+            <a class="primary" href="https://assignment-10-212c3.web.app/" target="_blank">Get This Template</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Template 2 -->
+      <article class="project-card revealer">
+        <div class="project-media"><img src="./images/game2.png" alt="Restaurant Template"></div>
+        <div class="project-info">
+          <h3>Car Rental Platform</h3>
+          <p>Online car booking system with multiple models and payment options.
+
+</p>
+          <div class="project-actions">
+            <button class="ghost" data-preview-open>Preview</button>
+            <a class="primary" href="https://assignment-11-9153e.web.app/" target="_blank">Get This Template</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Template 3 -->
+      <article class="project-card revealer">
+        <div class="project-media"><img src="./images/game3.png" alt="Shop Template"></div>
+        <div class="project-info">
+          <h3>Coupon Collecting</h3>
+          <p>Digital marketplace for gadgets, browse and purchase easily.</p>
+          <div class="project-actions">
+            <button class="ghost" data-preview-open>Preview</button>
+            <a class="primary" href="https://assignment-9-fb7fb.web.app/" target="_blank">Get This Template</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox / Preview modal -->
+<div id="lightbox" class="lightbox" aria-hidden="true"><img src="" alt="Project preview"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact / Start a Project</h2>
+    <div class="contact-wrap revealer">
+      <form id="contactForm" action="https://formspree.io/f/mvgergdq" method="POST">
+
+        <div class="contact-row">
+          <input name="name" placeholder="Your Name" required>
+          <input name="email" type="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Tell us about your project" required></textarea>
+        </div>
+        <div class="contact-actions">
+          <button class="ghost" type="reset">Reset</button>
+          <button class="primary" type="submit">Send Message</button>
+        </div>
+      </form>
+    </div>
+    <p style="text-align:center;margin-top:14px;opacity:.82">Or email us: <a href="mailto:info@pixelwavestudio.com">info@pixelwavestudio.com</a></p>
+  </div>
+</section>
+
+
+<footer>
+  © <span id="year">2025</span> PixelWave Studio — Crafted with clean code
+</footer>
+
+
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script> 
+<script>
+  // თქვენი მოწოდებული კონფიგურაცია
+  const firebaseConfig = {
+    apiKey: "AIzaSyC5UNnxPk_S50Irsw3lRL8COQUXECfuaLQ",
+    authDomain: "pixelwave-studio-auth.firebaseapp.com",
+    projectId: "pixelwave-studio-auth",
+    storageBucket: "pixelwave-studio-auth.firebasestorage.app",
+    messagingSenderId: "808370024106",
+    appId: "1:808370024106:web:634e6559e3162a8a97aad3",
+    measurementId: "G-Z9Q578539J" // არ არის სავალდებულო Auth-სთვის
+  };
+
+  // Initialize Firebase (Compatibility Syntax)
+  // ეს ინიციალიზაცია გამოიყენებს გლობალურ `firebase` ობიექტს
+  const app = firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth(); // იღებს Auth ობიექტს Compatibility სინტაქსით
+</script>
+
+<script src="app.js"></script>
+<script src="app.js"></script>
+
+
+</body>
+</html>
